@@ -31,9 +31,59 @@ Console.WriteLine(""); // Next Line
 // use .reverse (String)
 // write the program to find a palindrome of a number.
 
+Console.WriteLine("Enter a positive number to check if it is a Palindrom or Not.");
+number = int.Parse(Console.ReadLine());
+int copyNumber = number;
+int reversedNumber = 0;
+
+while (number > 0)
+{
+    // extract the digit
+    int digit = number % 10; 
+    // 1234
+    // add that number to reversedNumber
+    // 0 + 4 => 4
+    reversedNumber = (reversedNumber * 10) + digit; // we add the digit and move the unit in places of tens, hunderds ....
+    // (0 * 10) + 4 = 4
+    // remove the last digit;
+    number = number / 10;
+    // 1234 -> 123
+}
+
+if(copyNumber == reversedNumber)
+{
+    Console.WriteLine($"{copyNumber} is Palindrome.");
+}
+else
+{
+    Console.WriteLine($"{copyNumber} is not a Palindrome.");
+}
 
 
+// 1st iteration
+// 1234 % 10 -> 4
+// (0 * 10) + 4
+// remove 1234 / 10 -> 123
 
+// 2nd Iteration
+// reverse = 4, number 123
+// 123 % 10 -> 3
+// (4 * 10) + 3 = 43
+// remove 123 / 10 -> 12
+
+// 3rd Iteration
+// reverse = 43, number 12
+// 12 % 10 -> 2
+// (43 * 10) + 2 = 432
+// remove 12 / 10 -> 1
+
+// 4th Iteration
+// reverse = 432, number 1
+// 1 % 10 -> 1
+// (432 * 10) + 1 = 4321
+// remove 1 / 10 -> 0.1 => 0
+
+// 5th iteration - breaks out
 
 
 

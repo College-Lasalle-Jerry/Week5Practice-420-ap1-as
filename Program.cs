@@ -216,6 +216,7 @@ sum = 0;
 
 while (number >= 10) // run twice
 {
+    sum = 0;
     while (number > 0) // 4 times (number of digits - 1)
     {
         int digit = number % 10;

@@ -245,3 +245,95 @@ while (number > 0)
     number = number / 10; // remove the last digit.
 }
 Console.WriteLine($"The largest Digit is: {largest}");
+
+
+// 13. Count all even and odd digits in a given number
+Console.WriteLine("Count all even and odd digits in a given number");
+number = int.Parse(Console.ReadLine());
+int even = 0, odd = 0;
+
+while(number > 0)
+{
+    int digit = number % 10;
+    if(digit % 2 == 0) // digit is even.
+    {
+        even++;
+    }
+    else
+    {
+        odd++;
+    }
+    number = number / 10; // remove the last digit.
+    // number /=10;
+}  
+
+Console.WriteLine($"Count of Even is: {even} and Odd is: {odd}");
+
+// 14. Perfect number
+// 28
+// 1,2,4,7,14 = 28.
+Console.WriteLine("Perfect Number Check: ");
+Console.WriteLine("Enter a damn number: ");
+number = int.Parse(Console.ReadLine());
+int sumOfDivisors = 0;
+int divisors = 1;
+
+while (divisors < number)
+{
+    if(number % divisors == 0)
+    {
+        sumOfDivisors = sumOfDivisors + divisors;
+    }
+    divisors++;
+}
+
+if(sumOfDivisors == number)
+{
+    Console.WriteLine("Perfect Number:");
+}else
+{
+    Console.WriteLine("Not a Perfect Number");
+}
+
+// 16. Happy Number
+//  19
+// 1^2 + 9^2 = 82
+// 8^2 + 2^2 = 68
+// 6^2 + 8^2 = 100
+// 1^2 + 0^2 + 0^2 = 1
+// sum of these = 1
+Console.WriteLine("Happy Number Check:");
+number = int.Parse(Console.ReadLine());
+int copy = number;
+
+// while loop
+while (true)
+{
+    sum = 0;
+    while (number > 0)
+    {
+        int digit = number % 10; // extract the last digit.
+        sum = sum + (digit * digit); // add the sq of digit to the sum.
+        number = number / 10; // removing the last number.
+    }
+    if(sum == 1)
+    {
+        Console.WriteLine("Happy Number");
+        break;
+    }else if (sum == number || sum==4){
+        // 4
+        // 16 -> 1^2 + 6^2 =>
+
+        // 37 => 9+49=> 58=>
+        // 25+64=> 89,
+        // 64 + 81=> 145=>
+        // 1+ 16+25=> 42,
+        // 16 + 4=> 20=>
+        // 4+0=> 4 
+        Console.WriteLine("Not a Happy Number");
+        break;
+    }else
+    {
+        number = sum;
+    }
+}

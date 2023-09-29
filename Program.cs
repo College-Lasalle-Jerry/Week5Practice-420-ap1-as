@@ -126,7 +126,8 @@ while (i <= number)
 
 // 6. sum of a digits using while loop.
 // 1234 -> 1+2+3+4 = 10;
-
+Console.WriteLine("sum of a digits using while loop.");
+Console.WriteLine("ENter a No:");
 number = int.Parse(Console.ReadLine()); // number from the user
 sum = 0;
 
@@ -171,3 +172,75 @@ while (number > 0)
 
 
 Console.WriteLine($"The Sum of digits of {number} is {sum}");
+
+
+Console.WriteLine("Sum of digits");
+sum = 0;
+number = 12345;
+while (number >= 10)
+{
+    sum = 0;
+    while (number > 0)
+    {
+        int digit = number % 10;
+        sum += digit;
+        number /= 10;
+    }
+    number = sum;
+}
+Console.WriteLine(number);
+
+// 10.  Sum of digits of a given number
+
+Console.WriteLine("Sum of digits of a given number");
+number = int.Parse(Console.ReadLine());
+sum = 0;
+while (number > 0)
+{
+    int digit = number % 10;
+    sum = sum + digit;
+    number = number / 10;
+}
+
+Console.WriteLine($"sum of digits is: {sum}");
+
+
+// 12345 
+// 1 + 2 + 3 + 4 + 5 => 15
+// 1+5 => 6
+
+Console.WriteLine("Sum of digits until only one digit is left");
+Console.WriteLine("Enter a Number:");
+number = int.Parse(Console.ReadLine());
+sum = 0;
+
+while (number >= 10) // run twice
+{
+    while (number > 0) // 4 times (number of digits - 1)
+    {
+        int digit = number % 10;
+        sum = sum + digit;
+        number = number / 10;
+    }
+    // line 
+    number = sum;
+}
+
+Console.WriteLine(number);
+
+Console.WriteLine("Print the largest Digit in a given number");
+Console.WriteLine("Enter a Number: ");
+number = int.Parse(Console.ReadLine());
+
+int largest = -1;
+while (number > 0)
+{
+    int digit = number % 10; // extract the last digit.
+    // if condition to check the largest value with the stored value
+    if(digit >= largest)
+    {
+        largest = digit;
+    }
+    number = number / 10; // remove the last digit.
+}
+Console.WriteLine($"The largest Digit is: {largest}");
